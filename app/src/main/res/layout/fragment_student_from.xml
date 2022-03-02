@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etNameField"
+            style="@style/etField"
+            android:hint="@string/name"
+            android:inputType="textCapWords"
+            app:endIconMode="clear_text"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/ic_baseline_person_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
+                style="@style/editText"
+                android:inputType="textCapWords"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etEmailField"
+            style="@style/etField"
+            android:hint="@string/email"
+            app:endIconMode="clear_text"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/ic_baseline_email_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                style="@style/editText"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etPhoneField"
+            style="@style/etField"
+            android:layout_weight="1"
+            android:hint="@string/phone"
+            app:endIconMode="clear_text"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/ic_baseline_phone_24"
+            android:layout_height="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_weight="1"
+                style="@style/editText"
+                android:inputType="number"
+                android:maxLength="10" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etAddressField"
+            style="@style/etField"
+            android:hint="@string/Address"
+            app:endIconMode="clear_text"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/ic_baseline_home_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAddress"
+                style="@style/editText"
+                android:inputType="textPostalAddress" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etBloodGroupField"
+            style="@style/etDropDownField"
+            android:hint="@string/blood_group"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/ic_baseline_bloodtype_24">
+
+            <AutoCompleteTextView
+                android:id="@+id/ac_txtBloodGroup"
+                style="@style/editText"
+                android:inputType="none"
+                android:dropDownWidth="wrap_content"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etDateField"
+            style="@style/etField"
+            android:hint="@string/DOB"
+            app:helperText="Required*"
+            app:helperTextTextColor="@color/red"
+            app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDate"
+                style="@style/editText" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtGender"
+                style="@style/main_text"
+                android:text="@string/gender" />
+
+            <RadioGroup
+                android:id="@+id/rgButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    style="@style/rbStyle"
+                    android:button="@drawable/ic_male"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    style="@style/rbStyle"
+                    android:button="@drawable/ic_female"
+                    android:text="@string/female" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:src="@drawable/ic_language"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txtLanguage"
+                style="@style/main_text"
+                android:text="@string/known_language" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkEnglish"
+                style="@style/checkStyle"
+                android:text="@string/english" />
+
+            <CheckBox
+                android:id="@+id/checkHindi"
+                style="@style/checkStyle"
+                android:text="@string/hindi" />
+
+            <CheckBox
+                android:id="@+id/checkGujarati"
+                style="@style/checkStyle"
+                android:text="@string/gujarati" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/btnStyle"
+            android:layout_gravity="center"
+            android:text="@string/save" />
+    </LinearLayout>
+
+
+</ScrollView>
