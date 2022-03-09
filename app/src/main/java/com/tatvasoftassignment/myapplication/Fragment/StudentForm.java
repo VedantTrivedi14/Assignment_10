@@ -167,38 +167,56 @@ public class StudentForm extends Fragment {
         });
     }
 
+
+    @SuppressLint("UseCompatLoadingForColorStateLists")
     private Boolean isValid() {
         boolean valid = true;
 
         if (Objects.requireNonNull(binding.etName.getText()).toString().length() == 0) {
             Toast.makeText(getContext(), getString(R.string.Enter_Name), Toast.LENGTH_LONG).show();
             binding.etName.requestFocus();
+            binding.etNameField.setHelperText(getString(R.string.require));
+            binding.etNameField.setHelperTextColor(getResources().getColorStateList(R.color.red));
             valid = false;
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(Objects.requireNonNull(binding.etEmail.getText()).toString()).matches()) {
+        } else if (Objects.requireNonNull(binding.etEmail.getText()).toString().length() == 0) {
             Toast.makeText(getContext(), getString(R.string.Enter_Email), Toast.LENGTH_LONG).show();
             binding.etEmail.requestFocus();
+            binding.etEmailField.setHelperText(getString(R.string.require));
+            binding.etEmailField.setHelperTextColor(getResources().getColorStateList(R.color.red));
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(Objects.requireNonNull(binding.etEmail.getText()).toString()).matches()) {
+            Toast.makeText(getContext(), getString(R.string.invalidate_email), Toast.LENGTH_LONG).show();
+            binding.etEmail.requestFocus();
+            binding.etEmailField.setHelperText(getString(R.string.require));
+            binding.etEmailField.setHelperTextColor(getResources().getColorStateList(R.color.red));
             valid = false;
         } else if (Objects.requireNonNull(binding.etDate.getText()).toString().length() == 0) {
             Toast.makeText(getContext(), getString(R.string.select_Date), Toast.LENGTH_LONG).show();
+            binding.etDateField.setHelperText(getString(R.string.require));
+            binding.etDateField.setHelperTextColor(getResources().getColorStateList(R.color.red));
             binding.etDate.requestFocus();
             valid = false;
         } else if (Objects.requireNonNull(binding.etAddress.getText()).toString().length() == 0) {
             Toast.makeText(getContext(), getString(R.string.Enter_Address), Toast.LENGTH_LONG).show();
             binding.etAddress.requestFocus();
+            binding.etAddressField.setHelperText(getString(R.string.require));
+            binding.etAddressField.setHelperTextColor(getResources().getColorStateList(R.color.red));
             valid = false;
         } else if (Objects.requireNonNull(binding.etPhone.getText()).toString().length() != 10) {
             Toast.makeText(getContext(), getString(R.string.Enter_Contact_Number), Toast.LENGTH_LONG).show();
             binding.etPhone.requestFocus();
+            binding.etPhoneField.setHelperText(getString(R.string.require));
+            binding.etPhoneField.setHelperTextColor(getResources().getColorStateList(R.color.red));
             valid = false;
         } else if (binding.acTxtBloodGroup.getText().toString().length() == 0) {
             Toast.makeText(getContext(), getString(R.string.select_country), Toast.LENGTH_LONG).show();
             binding.acTxtBloodGroup.requestFocus();
+            binding.etBloodGroupField.setHelperText(getString(R.string.require));
+            binding.etBloodGroupField.setHelperTextColor(getResources().getColorStateList(R.color.red));
             valid = false;
         } else if (!binding.checkEnglish.isChecked() && !binding.checkHindi.isChecked() && !binding.checkGujarati.isChecked()) {
             Toast.makeText(getContext(), getString(R.string.select_language), Toast.LENGTH_LONG).show();
             valid = false;
         } else if (!binding.rbMale.isChecked() && !binding.rbFemale.isChecked()) {
-
             Toast.makeText(getContext(), getString(R.string.select_gender), Toast.LENGTH_SHORT).show();
             binding.rgButton.requestFocus();
             valid = false;

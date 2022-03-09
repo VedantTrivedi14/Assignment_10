@@ -30,14 +30,15 @@
     <string name="blood_group">Blood Group</string>
     <string name="Enter_Name">Enter name</string>
     <string name="select_language">Select language</string>
-    <string name="Enter_Email">Enter email</string>
+    <string name="Enter_Email">Enter Email</string>
+    <string name="invalidate_email">Please enter validate email</string>
     <string name="select_Date">Select date</string>
     <string name="Enter_Address">Enter address</string>
     <string name="Enter_Contact_Number">Enter proper contact number</string>
     <string name="select_country">Select country</string>
     <string name="added_successfully">student data added successfully</string>
     <string name="no_data_available">No data available</string>
-    <string name="delete_alert_msg">This data will delete permanently, hope you sure about it</string>
+    <string name="delete_alert_msg">This data will delete permanently , hope you sure about it</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="delete_done">Deleted Successfully</string>
@@ -45,6 +46,8 @@
     <string name="update_data_title">Update student data</string>
     <string name="no_details_found">No details found</string>
     <string name="select_gender">Select gender</string>
+    <string name="require">Require*</string>
+    <string name="alert">alert</string>
 
 
     <string-array name="blood_group_array">

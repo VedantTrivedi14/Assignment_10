@@ -16,14 +16,12 @@
             android:hint="@string/name"
             android:inputType="textCapWords"
             app:endIconMode="clear_text"
-            app:helperText="Required*"
-            app:helperTextTextColor="@color/red"
             app:startIconDrawable="@drawable/ic_baseline_person_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
                 style="@style/editText"
-                android:inputType="textCapWords"/>
+                android:inputType="textCapWords" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -33,8 +31,6 @@
             style="@style/etField"
             android:hint="@string/email"
             app:endIconMode="clear_text"
-            app:helperText="Required*"
-            app:helperTextTextColor="@color/red"
             app:startIconDrawable="@drawable/ic_baseline_email_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -45,22 +41,19 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etPhoneField"
             style="@style/etField"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:hint="@string/phone"
             app:endIconMode="clear_text"
-            app:helperText="Required*"
-            app:helperTextTextColor="@color/red"
-            app:startIconDrawable="@drawable/ic_baseline_phone_24"
-            android:layout_height="0dp">
+            app:startIconDrawable="@drawable/ic_baseline_phone_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPhone"
-                android:layout_weight="1"
                 style="@style/editText"
+                android:layout_weight="1"
                 android:inputType="number"
                 android:maxLength="10" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -71,8 +64,6 @@
             style="@style/etField"
             android:hint="@string/Address"
             app:endIconMode="clear_text"
-            app:helperText="Required*"
-            app:helperTextTextColor="@color/red"
             app:startIconDrawable="@drawable/ic_baseline_home_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -87,33 +78,28 @@
             android:id="@+id/etBloodGroupField"
             style="@style/etDropDownField"
             android:hint="@string/blood_group"
-            app:helperText="Required*"
-            app:helperTextTextColor="@color/red"
             app:startIconDrawable="@drawable/ic_baseline_bloodtype_24">
 
             <AutoCompleteTextView
                 android:id="@+id/ac_txtBloodGroup"
                 style="@style/editText"
-                android:inputType="none"
                 android:dropDownWidth="wrap_content"
+                android:inputType="none"
                 tools:ignore="LabelFor" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
-
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etDateField"
             style="@style/etField"
             android:hint="@string/DOB"
-            app:helperText="Required*"
-            app:helperTextTextColor="@color/red"
-            app:startIconDrawable="@drawable/ic_baseline_date_range_24">
 
+            app:startIconDrawable="@drawable/ic_baseline_date_range_24">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDate"
+                android:focusable="false"
+                android:inputType="date"
                 style="@style/editText" />
 
         </com.google.android.material.textfield.TextInputLayout>

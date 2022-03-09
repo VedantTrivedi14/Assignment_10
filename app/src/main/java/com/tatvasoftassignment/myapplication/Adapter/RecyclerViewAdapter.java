@@ -88,7 +88,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                             break;
                         case R.id.miDelete:
                             AlertDialog.Builder builder = new AlertDialog.Builder(ctx)
-                                    .setTitle(R.string.delete_alert_msg)
+                                    .setTitle(R.string.alert)
+                                    .setMessage(R.string.delete_alert_msg)
                                     .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
                                         db.deleteData(dataId);
                                         studentList.remove(dataId);
