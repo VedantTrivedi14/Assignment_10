@@ -9,11 +9,11 @@
     <string name="female">Female</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
-    <string name="datePicker">datePicker</string>
+    <string name="datePicker">DatePicker</string>
     <string name="birth_date_dd_mm_yyyy">Birth Date (dd/mm/yyyy)</string>
     <string name="address">Address</string>
     <string name="save">Save</string>
-    <string name="select_course">select course</string>
+    <string name="select_course">Select course</string>
     <string name="course">Course</string>
     <string name="edit">Edit</string>
     <string name="update">Update</string>
@@ -36,7 +36,7 @@
     <string name="Enter_Address">Enter address</string>
     <string name="Enter_Contact_Number">Enter proper contact number</string>
     <string name="select_country">Select country</string>
-    <string name="added_successfully">student data added successfully</string>
+    <string name="added_successfully">Student data added successfully</string>
     <string name="no_data_available">No data available</string>
     <string name="delete_alert_msg">This data will delete permanently , hope you sure about it</string>
     <string name="yes">Yes</string>
@@ -47,7 +47,7 @@
     <string name="no_details_found">No details found</string>
     <string name="select_gender">Select gender</string>
     <string name="require">Require*</string>
-    <string name="alert">alert</string>
+    <string name="alert">Alert</string>
 
 
     <string-array name="blood_group_array">

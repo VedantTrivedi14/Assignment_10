@@ -35,12 +35,12 @@ public class StudentForm extends Fragment {
     public static int set_day;
     public static int set_month;
     public static int set_year;
-    String language = "";
-    ArrayAdapter<String> bloodGroupAdapter;
+    private String language = "";
+    private ArrayAdapter<String> bloodGroupAdapter;
     private boolean addData = true;
     private int id;
-    DatabaseHelper db;
-    StudentData data;
+    private DatabaseHelper db;
+    private StudentData data;
     private DatePickerDialog.OnDateSetListener datePicker;
 
     public StudentForm() {

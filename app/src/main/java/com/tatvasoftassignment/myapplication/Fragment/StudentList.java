@@ -25,7 +25,7 @@ import java.util.Objects;
 
 public class StudentList extends Fragment {
     private FragmentStudentListBinding binding;
-    DatabaseHelper db;
+    private DatabaseHelper db;
     private final ArrayList<StudentData> data = new ArrayList<>();
     private RecyclerViewAdapter adapter;
 
