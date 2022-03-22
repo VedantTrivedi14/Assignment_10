@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etNameField"
@@ -16,12 +15,16 @@
             android:hint="@string/name"
             android:inputType="textCapWords"
             app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:startIconDrawable="@drawable/ic_baseline_person_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
                 style="@style/editText"
-                android:inputType="textCapWords" />
+                android:inputType="textCapWords"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -31,12 +34,16 @@
             style="@style/etField"
             android:hint="@string/email"
             app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNameField"
             app:startIconDrawable="@drawable/ic_baseline_email_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
                 style="@style/editText"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etNameField" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -48,6 +55,8 @@
             android:layout_weight="1"
             android:hint="@string/phone"
             app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etEmailField"
             app:startIconDrawable="@drawable/ic_baseline_phone_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -55,7 +64,9 @@
                 style="@style/editText"
                 android:layout_weight="1"
                 android:inputType="number"
-                android:maxLength="10" />
+                android:maxLength="10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etEmailField" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -64,12 +75,16 @@
             style="@style/etField"
             android:hint="@string/Address"
             app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etPhoneField"
             app:startIconDrawable="@drawable/ic_baseline_home_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAddress"
                 style="@style/editText"
-                android:inputType="textPostalAddress" />
+                android:inputType="textPostalAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etPhoneField" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -78,6 +93,8 @@
             android:id="@+id/etBloodGroupField"
             style="@style/etDropDownField"
             android:hint="@string/blood_group"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etAddressField"
             app:startIconDrawable="@drawable/ic_baseline_bloodtype_24">
 
             <AutoCompleteTextView
@@ -85,6 +102,8 @@
                 style="@style/editText"
                 android:dropDownWidth="wrap_content"
                 android:inputType="none"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etAddressField"
                 tools:ignore="LabelFor" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -94,93 +113,98 @@
             android:id="@+id/etDateField"
             style="@style/etField"
             android:hint="@string/DOB"
-
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etBloodGroupField"
             app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDate"
+                style="@style/editText"
                 android:focusable="false"
                 android:inputType="date"
-                style="@style/editText" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etBloodGroupField" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/txtGender"
+            style="@style/main_text"
+            android:text="@string/gender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDateField" />
+
+        <RadioGroup
+            android:id="@+id/rgButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtGender">
 
-            <TextView
-                android:id="@+id/txtGender"
-                style="@style/main_text"
-                android:text="@string/gender" />
+            <RadioButton
+                android:id="@+id/rbMale"
+                style="@style/rbStyle"
+                android:button="@drawable/ic_male"
+                android:text="@string/male" />
 
-            <RadioGroup
-                android:id="@+id/rgButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbFemale"
+                style="@style/rbStyle"
+                android:button="@drawable/ic_female"
+                android:text="@string/female" />
+        </RadioGroup>
 
-                <RadioButton
-                    android:id="@+id/rbMale"
-                    style="@style/rbStyle"
-                    android:button="@drawable/ic_male"
-                    android:text="@string/male" />
-
-                <RadioButton
-                    android:id="@+id/rbFemale"
-                    style="@style/rbStyle"
-                    android:button="@drawable/ic_female"
-                    android:text="@string/female" />
-            </RadioGroup>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/imgLanguage"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="@dimen/padding"
+            android:src="@drawable/ic_language"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rgButton"
+            tools:ignore="ContentDescription" />
 
-            <ImageView
-                android:id="@+id/imgLanguage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding"
-                android:src="@drawable/ic_language"
-                tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/txtLanguage"
+            style="@style/main_text"
+            android:text="@string/known_language"
+            app:layout_constraintStart_toEndOf="@id/imgLanguage"
+            app:layout_constraintTop_toBottomOf="@id/rgButton" />
 
-            <TextView
-                android:id="@+id/txtLanguage"
-                style="@style/main_text"
-                android:text="@string/known_language" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkEnglish"
+            style="@style/checkStyle"
+            android:text="@string/english"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgLanguage" />
 
-            <CheckBox
-                android:id="@+id/checkEnglish"
-                style="@style/checkStyle"
-                android:text="@string/english" />
+        <CheckBox
+            android:id="@+id/checkHindi"
+            style="@style/checkStyle"
+            android:text="@string/hindi"
+            app:layout_constraintStart_toEndOf="@id/checkEnglish"
+            app:layout_constraintTop_toBottomOf="@id/imgLanguage" />
 
-            <CheckBox
-                android:id="@+id/checkHindi"
-                style="@style/checkStyle"
-                android:text="@string/hindi" />
+        <CheckBox
+            android:id="@+id/checkGujarati"
+            style="@style/checkStyle"
+            android:text="@string/gujarati"
+            app:layout_constraintStart_toEndOf="@id/checkHindi"
+            app:layout_constraintTop_toBottomOf="@id/imgLanguage" />
 
-            <CheckBox
-                android:id="@+id/checkGujarati"
-                style="@style/checkStyle"
-                android:text="@string/gujarati" />
-        </LinearLayout>
 
         <Button
             android:id="@+id/btnSave"
             style="@style/btnStyle"
             android:layout_gravity="center"
-            android:text="@string/save" />
-    </LinearLayout>
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/checkEnglish" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </ScrollView>

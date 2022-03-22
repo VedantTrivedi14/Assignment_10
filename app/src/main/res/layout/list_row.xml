@@ -6,39 +6,40 @@
     android:layout_margin="@dimen/margin"
     android:background="@drawable/row_border">
 
-    <LinearLayout
-        android:id="@+id/linLayout"
-        android:layout_margin="@dimen/margin1"
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_toStartOf="@+id/imgBtnMenu"
+        android:padding="@dimen/padding"
+        android:text="@string/name"
+        android:textColor="@color/purple_200"
+        android:textSize="@dimen/textSize"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_below="@id/txtName"
+        android:layout_toStartOf="@+id/imgBtnMenu"
+        android:layout_alignParentStart="true"
+        android:padding="@dimen/padding"
+        android:layout_marginStart="@dimen/margin"
+        android:text="@string/email"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_size" />
 
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/padding"
-            android:text="@string/name"
-            android:textColor="@color/purple_200"
-            android:textSize="@dimen/textSize"
-            android:textStyle="bold"
-            tools:ignore="TextContrastCheck" />
-
-        <TextView
-            android:id="@+id/txtEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:padding="@dimen/padding"
-            android:textColor="@color/black"
-            android:textSize="@dimen/txt_size" />
-    </LinearLayout>
 
     <ImageButton
         android:id="@+id/imgBtnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/linLayout"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="@dimen/margin1"
         android:layout_marginTop="@dimen/margin1"
         android:layout_marginEnd="@dimen/margin1"
